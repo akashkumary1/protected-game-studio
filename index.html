@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protected Game Studio — Mobile Games Developer</title>
+<meta name="description" content="Protected Game Studio develops high-quality mobile games for Android. Chess Master, puzzle games, and more.">
+<meta property="og:title" content="Protected Game Studio">
+<meta property="og:description" content="High-quality mobile games for Android">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #faf9f7;
+    --bg-card: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #6b6560;
+    --accent: #8b6914;
+    --accent-light: #f5eedd;
+    --border: #e8e4df;
+    --radius: 16px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,249,247,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .nav-inner {
+    max-width: 960px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 15px; color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo svg { flex-shrink: 0; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; color: var(--text-muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    max-width: 960px; margin: 0 auto;
+    padding: 80px 24px 60px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700; letter-spacing: -0.02em;
+    line-height: 1.15; margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 16px; color: var(--text-muted);
+    max-width: 520px; margin: 0 auto;
+  }
+
+  /* GAMES GRID */
+  .section { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+  .section-title {
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 24px;
+  }
+  .games-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .game-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .game-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+  .game-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--accent-light); display: flex;
+    align-items: center; justify-content: center; margin-bottom: 16px;
+  }
+  .game-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+  .game-card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+  .badge {
+    display: inline-block; margin-top: 12px;
+    font-size: 11px; font-weight: 600; color: var(--accent);
+    background: var(--accent-light); padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  /* ABOUT */
+  .about-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 32px;
+  }
+  .about-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+  .about-card p { font-size: 14px; color: var(--text-muted); max-width: 600px; }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px; margin-top: 20px;
+  }
+  .contact-item {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .contact-item .label {
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 6px;
+  }
+  .contact-item .value {
+    font-size: 14px; font-weight: 500; color: var(--text);
+    word-break: break-all;
+  }
+  .contact-item a { color: var(--accent); text-decoration: none; }
+  .contact-item a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px; color: var(--text-muted);
+  }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+  .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .section { padding: 0 20px 60px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="7" fill="#8b6914" opacity="0.12"/>
+        <path d="M9 20h10v1.5H9zM10 18.5h8l1-4H9zM11 13h6v1.5h-6zM12 10h4v3h-4z" fill="#8b6914"/>
+        <rect x="13" y="7" width="2" height="3" rx="0.5" fill="#8b6914"/>
+        <rect x="12" y="7.5" width="4" height="1.5" rx="0.5" fill="#8b6914"/>
+      </svg>
+      Protected Game Studio
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>We build games<br>you'll love to play</h1>
+  <p>Protected Game Studio creates polished, ad-free mobile games with a focus on quality, fair play, and beautiful design.</p>
+</section>
+
+<section class="section" id="games">
+  <div class="section-title">Our Games</div>
+  <div class="games-grid">
+
+    <div class="game-card">
+      <div class="game-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M14 5v2M12.5 6h3M10 9c0-1.5 1.8-3 4-3s4 1.5 4 3v1.5H10V9z" stroke="#8b6914" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M9 10.5h10v3c0 1.5-1.3 2.5-3.2 2.5h-3.6C10.3 16 9 15 9 13.5v-3z" fill="#8b6914" opacity="0.2" stroke="#8b6914" stroke-width="1.5"/>
+          <rect x="10.5" y="16" width="7" height="2.5" rx="1" fill="#8b6914" opacity="0.3" stroke="#8b6914" stroke-width="1.2"/>
+          <path d="M8.5 18.5h11L21 23H7l1.5-4.5z" fill="#8b6914" opacity="0.15" stroke="#8b6914" stroke-width="1.3"/>
+          <rect x="6.5" y="23" width="15" height="2" rx="1" fill="#8b6914"/>
+        </svg>
+      </div>
+      <h3>Chess Master</h3>
+      <p>Play chess against 6 unique AI opponents, challenge friends online, solve 50+ tactical puzzles, and study famous master games. Full FIDE rules.</p>
+      <span class="badge">Available on Android</span>
+    </div>
+
+    <div class="game-card" style="opacity: 0.5;">
+      <div class="game-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect x="6" y="6" width="16" height="16" rx="3" stroke="#8b6914" stroke-width="1.5"/>
+          <circle cx="14" cy="14" r="3" stroke="#8b6914" stroke-width="1.5"/>
+          <path d="M11 11l6 6M17 11l-6 6" stroke="#8b6914" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <h3>More Coming Soon</h3>
+      <p>New games are in development. Stay tuned for puzzle, strategy, and brain training games from Protected Game Studio.</p>
+      <span class="badge">Coming Soon</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-title">About Us</div>
+  <div class="about-card">
+    <h2>Protected Game Studio</h2>
+    <p>We are an independent game studio focused on building high-quality, ad-free mobile games. Every game we release is crafted with attention to detail — clean design, smooth performance, fair gameplay, and respect for your privacy. No ads, no tracking, no data collection.</p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-title">Contact & Support</div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="label">Support Email</div>
+      <div class="value"><a href="mailto:vermaakashkumar123@gmail.com">vermaakashkumar123@gmail.com</a></div>
+    </div>
+    <div class="contact-item">
+      <div class="label">Developer</div>
+      <div class="value">Protected Game Studio</div>
+    </div>
+    <div class="contact-item">
+      <div class="label">Privacy Policy</div>
+      <div class="value"><a href="privacy-policy.html">View Privacy Policy</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="mailto:vermaakashkumar123@gmail.com">Contact</a>
+  </div>
+  <p>&copy; 2026 Protected Game Studio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
