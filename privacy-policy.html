@@ -149,7 +149,7 @@
 
   <div class="policy-header">
     <h1>Privacy Policy</h1>
-    <p class="meta">Protected Game Studio &middot; Last updated: March 24, 2026</p>
+    <p class="meta">Protected Game Studio &middot; Last updated: April 5, 2026</p>
     <p class="meta">This policy applies to all apps published by Protected Game Studio.</p>
   </div>
 
@@ -191,16 +191,24 @@
   </ul>
   <p>This data is stored using your device's local storage. It is never transmitted to our servers or any third party. You can delete this data at any time by clearing the app's data in your device settings or uninstalling the app.</p>
 
-  <h2>4. Online Multiplayer Features</h2>
+  <h2>4. Online Multiplayer &amp; In-Game Chat</h2>
   <p>Some of our apps include optional online multiplayer features. When you use these features:</p>
   <ul>
     <li>A temporary room code is generated to connect players</li>
-    <li>Chess moves and game state are transmitted between connected players in real time</li>
+    <li>Chess moves and game state are transmitted between connected players in real time via peer-to-peer (WebRTC / PeerJS)</li>
     <li>No personal information is exchanged between players</li>
     <li>No data is stored on our servers after the game session ends</li>
-    <li>Room data is automatically deleted within 30 minutes of game completion</li>
+    <li>Room data is automatically cleared when the session ends</li>
   </ul>
-  <p>Online multiplayer is entirely optional. All other features work fully offline.</p>
+  <p><strong>In-Game Chat:</strong> Chess Minds also includes an optional in-game chat during online multiplayer sessions. The following applies:</p>
+  <ul>
+    <li><strong>Peer-to-peer only:</strong> Text messages and images are sent directly between the two players&rsquo; devices using WebRTC. They do not pass through or get stored on our servers.</li>
+    <li><strong>No logging:</strong> We do not log, monitor, or store any chat messages or shared images.</li>
+    <li><strong>Session-only:</strong> All chat content exists only in device memory during the active session and is automatically cleared when the game ends.</li>
+    <li><strong>Image sharing:</strong> When you choose to share an image via chat, the image is read from your device using Android&rsquo;s system photo picker and sent directly to your opponent. It is never uploaded to a server.</li>
+    <li><strong>User responsibility:</strong> Do not share sensitive personal information through in-game chat. You are responsible for the content you send.</li>
+  </ul>
+  <p>Online multiplayer and chat are entirely optional. All other features work fully offline.</p>
 
   <h2>5. Third-Party Services</h2>
   <p>Our apps do <strong>not</strong> integrate with any of the following:</p>
@@ -234,9 +242,10 @@
   <h2>10. Permissions</h2>
   <p>Our apps may request the following Android permissions:</p>
   <ul>
-    <li><strong>INTERNET:</strong> Required only for optional online multiplayer functionality. No data is sent to external servers for tracking or analytics.</li>
+    <li><strong>INTERNET:</strong> Required for optional online multiplayer and peer-to-peer in-game chat. No personal data is sent to our servers.</li>
+    <li><strong>Photo Picker (READ access):</strong> Only when you actively choose to share an image in the in-game chat. Uses Android’s system photo picker &mdash; we do not have ongoing access to your gallery.</li>
   </ul>
-  <p>We do not request access to your camera, microphone, contacts, location, storage, phone, calendar, or any other sensitive permissions.</p>
+  <p>We do not request access to your camera, microphone, contacts, location, phone, calendar, or any other sensitive permissions beyond what is listed above.</p>
 
   <h2>11. Changes to This Policy</h2>
   <p>We may update this Privacy Policy from time to time. If we make significant changes, we will update the "Last updated" date at the top of this page. We encourage you to review this page periodically. Continued use of our apps after changes constitutes acceptance of the updated policy.</p>
